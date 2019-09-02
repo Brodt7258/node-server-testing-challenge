@@ -58,9 +58,9 @@ describe('test delete', () => {
   test('previous delete removed the correct post', () => {
     return request(app).get('/')
       .then(response => {
-        expect(response.body).toEqual((
+        expect(response.body).not.toEqual((
           expect.arrayContaining([
-            expect.not.objectContaining({
+            expect.objectContaining({
               id: 2
             })
           ])
